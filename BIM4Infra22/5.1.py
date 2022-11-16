@@ -36,9 +36,7 @@ if __name__ == '__main__':
         mast.toestand = 'in-ontwerp'
         list_of_assets.append(mast)
 
-    settings_file = Path('/home/davidlinux/Documents/AWV/resources/settings_OTLMOW.json')
-    converter = OtlmowConverter(settings_path=settings_file)
-
-    converter.create_file_from_assets(filepath=Path('/home/davidlinux/Documents/AWV/masten_langs_lijn.csv'),
-                                      list_of_objects=list_of_assets, class_directory='otlmow_model.Classes')
+    converter = OtlmowConverter()
+    converter.create_file_from_assets(filepath=Path('./masten_langs_lijn.csv'),
+                                      list_of_objects=list_of_assets)
 

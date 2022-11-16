@@ -1,4 +1,4 @@
-# pip install otlmow_modelbuilder
+# pip install otlmow_converter
 
 import logging
 from pathlib import Path
