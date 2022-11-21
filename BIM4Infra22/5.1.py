@@ -1,13 +1,13 @@
 # pip install otlmow_converter
 # pip install shapely (this will not work on Windows. Download the Shapely 1.8 wheel and place it in the main directory
-# of the project. Replace shapely in the command with the name of shapely wheel file.)
+# of the project. Replace shapely in the pip install command with the name of shapely wheel file.)
 
 
 from pathlib import Path
 
 import numpy
 from shapely import wkt
-from shapely.geometry import MultiPoint, LineString
+from shapely.geometry import MultiPoint, LineString, Point
 
 from otlmow_converter.AssetFactory import AssetFactory
 from otlmow_converter.OtlmowConverter import OtlmowConverter
@@ -30,7 +30,7 @@ if __name__ == '__main__':
     list_of_assets = []
     for index, point in enumerate(distanced_points.geoms):
         mast = AssetFactory.dynamic_create_instance_from_ns_and_name('onderdeel', 'WVLichtmast')
-        mast.geometry = point.wkt
+        mast.geometry = Point(point.x, point.y, 0).wkt
         mast.assetId.identificator = f'mast_{index}'
         mast.naam = f'mast_{index}'
         mast.toestand = 'in-ontwerp'
@@ -39,4 +39,3 @@ if __name__ == '__main__':
     converter = OtlmowConverter()
     converter.create_file_from_assets(filepath=Path('./masten_langs_lijn.csv'),
                                       list_of_objects=list_of_assets)
-
