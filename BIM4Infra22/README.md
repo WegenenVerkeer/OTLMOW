@@ -10,7 +10,7 @@ python --version
 Als de python versie lager is dan 3.8, kan je een recentere versie downloaden op https://www.python.org/downloads/ en installeren.
 Zorg ervoor dat je de nieuwe versie gebruikt om het volgende deel uit te voeren. Dat kan je doen door python te vervangen door de locatie van het nieuwe uitvoerbare python bestand.
 ## Virtual Environment configureren
-Het wordt aangeraden een virtuele omgeving (virtual environment of venv) te creëren via Python zodat je, wanneer je extra libraries installeert geen ongewnenste neveneffecten creëert met andere libraries in de Python installatie die door andere applicaties of systemen worden gebruikt.
+Het wordt aangeraden een virtuele omgeving (virtual environment of venv) te creëren via Python zodat je, wanneer je extra libraries installeert geen ongewenste neveneffecten creëert met andere libraries in de Python installatie die door andere applicaties of systemen worden gebruikt.
 Open een terminal of commandline. Ga met het cd command naar een lege map om daar jouw virtuele omgeving aan te maken. Dat doe je met het volgende commando:
 ```
 python -m venv venv
